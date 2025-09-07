@@ -3,6 +3,7 @@
 #include "FileType_C.h"
 #include "FileType_CS.h"
 #include "FileType_Java.h"
+#include "FileType_Ruby.h"
 #include "FileType_S.h"
 #include "FileType_Unknown.h"
 #include "FileType_VB.h"
@@ -26,6 +27,8 @@ IFileTypePtr FileTypeFactory::CreateFileType(
         fileType.reset(new FileType_Ada(ignorePrepStuff, minChars));
     else if (ext == "java")
         fileType.reset(new FileType_Java(ignorePrepStuff, minChars));
+    else if (ext == "rb" || ext == "rake" || ext == "ru" || ext == "rbw" || ext == "erb")
+        fileType.reset(new FileType_Ruby(ignorePrepStuff, minChars));
     else
         fileType.reset(new FileType_Unknown(minChars));
     return fileType;

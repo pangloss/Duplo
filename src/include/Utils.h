@@ -8,6 +8,10 @@ namespace CstyleUtils {
   std::string RemoveSingleLineComments(const std::string& line);
 }
 
+namespace RubyUtils {
+  std::string RemoveSingleLineComments(const std::string& line);
+}
+
 namespace StringUtil {
   /**
    * Trim string
